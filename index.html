@@ -8,50 +8,25 @@
         height: 800px;
       }
 
-      @keyframes hue {
-        0% {
-          filter: hue-rotate(0deg);
-        }
-
-        20% {
-          filter: hue-rotate(20deg);
-        }
-        25% {
-          filter: hue-rotate(90deg);
-        }
-
-        45% {
-          filter: hue-rotate(110deg);
-        }
-        50% {
-          filter: hue-rotate(180deg);
-        }
-
-        70% {
-          filter: hue-rotate(200deg);
-        }
-        75% {
-          filter: hue-rotate(270deg);
-        }
-
-        95% {
-          filter: hue-rotate(290deg);
-        }
-        100% {
-          filter: hue-rotate(360deg);
-        }
-      }
-
       img {
         margin-top: 175px;
         margin-left: 175px;
-        animation: hue 10.105263152s forwards infinite;
+        animation: filter 2s;
       }
     </style>
   </head>
   <body>
+    <b>anna luku 0 ylöspäi:</b>
+    <input type="text" class="luku" /><br />
     <div class="wrapper">
       <img src="makea.png" />
     </div>
+    <script>
+      document.querySelector(".luku").addEventListener("keypress", e => {
+        document.querySelector(
+          "img"
+        ).style.filter = `hue-rotate(${e.target.value}deg)`;
+      });
+    </script>
   </body>
 </html>
